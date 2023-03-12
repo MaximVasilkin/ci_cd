@@ -1,4 +1,5 @@
 name: autodeploy
+
   on:
     push:
       branches: [master]
