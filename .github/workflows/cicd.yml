@@ -1,8 +1,8 @@
 name: autodeploy
 
-  on:
-    push:
-      branches: [master]
+    on:
+        push:
+            branches: [master]
 
 jobs:
   tests:
