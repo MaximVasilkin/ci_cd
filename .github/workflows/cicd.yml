@@ -59,6 +59,16 @@ jobs:
           DB_PORT: ${{ env.DB_PORT }}
           DB_USER: ${{ env.DB_USER }}
 
-#      - name: Deploy
-#        uses:
-#
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: |
+            cd /root/stocks_products
+            git pull origin master
+            sudo systemctl restart gunicorn
+            
+
+
