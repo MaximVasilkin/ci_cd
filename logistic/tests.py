@@ -1,10 +1,11 @@
 from unittest import TestCase
-import requests
+from django.test import Client
 
 
 class CiCd(TestCase):
     def test_run_server(self):
-        response = requests.get('http://185.182.111.243/')
+        client = Client()
+        response = client.get('')
         reference = 'Stocks-Products API'
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.text, reference)
+        self.assertIn(reference, str(response.content))
