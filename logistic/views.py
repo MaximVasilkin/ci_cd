@@ -7,7 +7,7 @@ from logistic.serializers import ProductSerializer, StockSerializer
 
 
 def main_page(request):
-    msg = 'Stocks-Products API'
+    msg = 'Stocks-Products API v1'
     page = '''
     <!DOCTYPE html>
     <html lang="ru">
