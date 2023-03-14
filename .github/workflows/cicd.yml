@@ -66,10 +66,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          script: |
-            cd /root/stocks_products
-            git pull origin master
-            sudo systemctl restart gunicorn
-            
+          script: expect /root/stocks_products/pull.exp
 
 
